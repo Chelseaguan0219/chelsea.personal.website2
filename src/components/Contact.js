@@ -5,7 +5,9 @@ import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 import "../App.js";
 
+
 function Contact() {
+  const apiUrl = process.env.REACT_APP_API_URL;
   const formInitialDetails = {
     firstName: "",
     lastName:  "",
@@ -28,7 +30,7 @@ function Contact() {
     e.preventDefault();
     setButtonText("Sending...");
     try {
-      let response = await fetch("/api/contact", { 
+      let response = await fetch(`${apiUrl}/api/contact`, { 
         method: "POST",
         headers: {
           'Content-Type': 'application/json;charset=utf-8',
