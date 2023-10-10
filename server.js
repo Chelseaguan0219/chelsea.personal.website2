@@ -23,8 +23,8 @@ app.use(cors({
 }));
 app.use(express.json());
 app.use("/", router);
-// app.use(express.static(path.resolve(__dirname, './build')));
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.resolve(__dirname, './build')));
+
 
 const contactEmail = nodemailer.createTransport({
     service: 'gmail',
@@ -42,7 +42,7 @@ contactEmail.verify((error) => {
           }
 });
 
-router.post("/api/contact", (req, res) => {
+router.post("/api", (req, res) => {
   console.log('Received body:', req.body); 
   const name = req.body.firstName + ' ' + req.body.lastName;
   const email = req.body.email;
@@ -68,12 +68,9 @@ router.post("/api/contact", (req, res) => {
   res.json({ code: 200, status: "Message Sent" });
 });
 });
-// app.get('*', (req, res) => {
-//   res.sendFile(path.resolve(__dirname, './build','index.html'));
-// })
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
+  res.sendFile(path.resolve(__dirname, './build','index.html'));
+})
 app.listen(8000, () => {
     console.log(`Server is online on port: ${PORT}`)
 });
