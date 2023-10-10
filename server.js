@@ -42,7 +42,7 @@ contactEmail.verify((error) => {
           }
 });
 
-router.post("/api", (req, res) => {
+router.post("/api/contact", (req, res) => {
   console.log('Received body:', req.body); 
   const name = req.body.firstName + ' ' + req.body.lastName;
   const email = req.body.email;
