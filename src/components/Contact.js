@@ -30,7 +30,9 @@ function Contact() {
     e.preventDefault();
     setButtonText("Sending...");
     try {
-      let response = await fetch(`${apiUrl}/api/contact`, { 
+      //let response = await fetch("/api/contact"
+      //  let response = await fetch(`${apiUrl}/api/contact`
+      let response = await fetch("/api/contact", { 
         method: "POST",
         headers: {
           'Content-Type': 'application/json;charset=utf-8',
@@ -40,6 +42,7 @@ function Contact() {
       });
       setButtonText("Send");
       let result = await response.json();
+      console.log("API response:", result);
       setFormDetails(formInitialDetails);
       if (result.code === 200) {
         setStatus({ success: true, message: 'Message sent successfully'});
