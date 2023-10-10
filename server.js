@@ -68,7 +68,10 @@ router.post("/api/contact", (req, res) => {
   res.json({ code: 200, status: "Message Sent" });
 });
 });
-app.get('*', (req, res) => {
+// app.get('*', (req, res) => {
+//   res.sendFile(path.resolve(__dirname, './build','index.html'));
+// })
+app.get('/*', (req, res) => {
   res.sendFile(path.resolve(__dirname, './build','index.html'));
 })
 app.listen(8000, () => {
