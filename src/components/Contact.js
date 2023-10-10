@@ -45,12 +45,13 @@ function Contact() {
       setFormDetails(formInitialDetails);
       if (result.code === 200) {
         setStatus({ success: true, message: 'Message sent successfully'});
-      } else {
-        setStatus({ success: false, message: 'Something went wrong, please try again later.'});
-      }
+      } 
+      // else {
+      //   setStatus({ success: false, message: 'Something went wrong, please try again later.'});
+      // }
     } catch (error) {
       console.error('Fetch error:', error);
-      setStatus({ success: false, message: 'Something went wrong, please try again later.'});
+      // setStatus({ success: false, message: 'Something went wrong, please try again later.'});
     }
   };
   
