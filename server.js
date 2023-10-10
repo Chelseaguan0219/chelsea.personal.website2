@@ -9,7 +9,7 @@ const path = require('path');
 
 const app = express();
 // app.use(cors());
-const allowedOrigins = ['http://localhost:8000', 'https://chelsea-personal-website.onrender.com'];
+const allowedOrigins = ['http://localhost:3000', 'https://chelsea-personal-website.onrender.com'];
 app.use(cors({
   origin: function(origin, callback){
     // Allow requests with no origin (like mobile apps or curl requests)
@@ -69,7 +69,7 @@ router.post("/api/contact", (req, res) => {
 });
 });
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirnamem, './build','index.html'));
+  res.sendFile(path.resolve(__dirname, './build','index.html'));
 })
 app.listen(8000, () => {
     console.log(`Server is online on port: ${PORT}`)
