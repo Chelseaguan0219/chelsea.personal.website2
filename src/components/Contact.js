@@ -31,7 +31,6 @@ function Contact() {
     setButtonText("Sending...");
     try {
       //let response = await fetch("/api/contact"
-      //  let response = await fetch(`${apiUrl}/api/contact`
       let response = await fetch(`${apiUrl}/api/contact`, { 
         method: "POST",
         headers: {
