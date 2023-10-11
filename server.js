@@ -3,7 +3,7 @@ const router = express.Router();
 const cors = require("cors");
 const nodemailer = require("nodemailer");
 require('dotenv').config();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8000;
 const path = require('path');
 
 
@@ -50,7 +50,7 @@ router.post("/api/contact", (req, res) => {
   console.log('Email', name);
   const mail = {
     from: name,
-    to: "chelseaguan19@gmail.com",
+    to: "chelseaguan0219@gmail.com",
     subject: "Contact Form Submission - Portfolio",
     html: `<p>Name: ${name}</p>
            <p>Email: ${email}</p>
@@ -74,6 +74,6 @@ app.get('*', (req, res) => {
 //   res.sendFile(path.join(__dirname, '/build', 'index.html'));
 // });
 
-app.listen(5000, () => {
+app.listen(8000, () => {
     console.log(`Server is online on port: ${PORT}`)
 });
