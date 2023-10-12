@@ -21,6 +21,13 @@ app.use(cors({
     return callback(null, true);
   }
 }));
+app.get('api/contact',(req, res) => {
+  res.json({ key: 'value' });  // This will automatically set Content-Type to application/json
+  res.setHeader('Content-Type', 'application/json');
+res.send(JSON.stringify({ key: 'value' }));
+}); 
+
+
 app.use(express.json());
 app.use("/", router);
 app.use(express.static(path.resolve(__dirname, './build')));
