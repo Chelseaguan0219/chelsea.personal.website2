@@ -86,7 +86,7 @@ function Contact() {
     } catch (error) {
       console.error('Fetch error:', error);
       setButtonText("Send");
-      setStatus({ success: false, message: 'Something went wrong, please try again later.'});
+      // setStatus({ success: false, message: 'Something went wrong, please try again later.'});
     }
   };
   
