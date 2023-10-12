@@ -81,7 +81,7 @@ function Contact() {
       } else {
         console.error("API responded with HTTP", response.status); // Log if API responded with an error status
         setButtonText("Send");
-        setStatus({ success: false, message: `Something went wrong, server responded with ${response.status}`});
+        // setStatus({ success: false, message: `Something went wrong, server responded with ${response.status}`});
       }
     } catch (error) {
       console.error('Fetch error:', error);
